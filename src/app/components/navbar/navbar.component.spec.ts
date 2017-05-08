@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
+import { APP_ROUTING } from '../../app.routes';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
