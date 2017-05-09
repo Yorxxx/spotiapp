@@ -22,4 +22,10 @@ describe('SlideshowComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  xit('should have three elements', () => {
+    var compiled = fixture.debugElement.nativeElement;
+    console.log(compiled.querySelector('ol'));
+    expect(compiled.querySelector('ol').nativeElement.length).toEqual(3);
+  });
 });

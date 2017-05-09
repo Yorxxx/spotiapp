@@ -6,7 +6,7 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  /*beforeEach(async(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent, SlideshowComponent ]
     })
@@ -21,5 +21,11 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
+
+  it('should contain Lorem impum dolor', () => {
+
+    var compiled = fixture.debugElement.nativeElement;
+    expect(compiled.textContent).toContain('Lorem impum dolor');
+  });
 });

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs';
+var Observable = require('rxjs/Observable').Observable;
 
 @Injectable()
 export class SpotifyService {
@@ -12,12 +13,16 @@ export class SpotifyService {
 
   searchArtists(query: string) {
 
-    let suffix = `?q=${ query}&type=artist`;
+    if (!query || query.length === 0) {
+      return Observable.of([]);
+    }
+
+    let suffix = `?q=${ query }&type=artist`;
     let url = this.searchUrl + suffix;
 
     return this.http.get(url)
         .map( res => {
-          console.log(res);
+          return res.json();
         });
   }
 }
